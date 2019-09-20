@@ -22,4 +22,6 @@
     $x = (unset) $x; //null usuwa warotsc
     //operatory  rzutowania
     //bool,array,object,float,unset,string,int
+    $w;
+    echo @gettype($w);
 ?>
