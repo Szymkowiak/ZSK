@@ -1,0 +1,11 @@
+td {
+    border:1px solid black;
+    
+    padding: 5px;
+}
+.color-td {
+    background-color:red;
+}
+table{
+    border-collapse: collapse;
+}

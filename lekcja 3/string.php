@@ -34,7 +34,7 @@ T;
     echo '<br>',$search;
     $search = strstr($address,'Tel',true); //nie działą bo T jest  z duzej
     echo '<br>',$search;
-    $search = stristr($address,'Tel',true); 
+    $search = stristr($address,'Tel'); 
     echo '<br>',$search.'<br>';
     $mail = strstr('zsk@gmail.com', '@').'<br>';
     echo $mail;
