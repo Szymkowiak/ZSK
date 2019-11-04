@@ -1,4 +1,4 @@
-td {
+td ,th{
     border:1px solid black;
     
     padding: 5px;
@@ -8,4 +8,10 @@ td {
 }
 table{
     border-collapse: collapse;
+}
+th {
+    background-color: lightgrey;
+}
+.black {
+    background-color: black;
 }

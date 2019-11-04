@@ -37,7 +37,7 @@ if(!empty($_GET['size'])){
     ?>
     <form method="get">
         <input type="number" name="size">
-        <button>DO IT</button>
+        <button>Stworz</button>
     </form>
     <?php
     }

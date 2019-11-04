@@ -12,17 +12,24 @@
 
 if(!empty($_GET['size'])){
     echo "<table>";
-    $i = 1;
+    $i = 0;
         $max = $_GET['size'];
         $sum = 0;
         do{
-            $j = 1;
+            $j = 0;
             echo "<tr>";
             do{
-                if($j == $max-$i+1){
+                if($j == 0 || $i == 0){
+                    if($j == 0 && $i == 0){
+                        echo "<td class=\"black\"/>";
+                    }else {
+                        echo "<th>".(($i+1) * ($j+1)-1)."</th>";
+                    }
+                }
+                else if($j == $max-$i+1 || $j == $i){
                     echo"<td class=\"color-td\">".$i * $j."</td>";
                     $sum+=$i * $j;
-                }else{
+                }else {
                     echo "<td>".$i * $j."</td>";
                 }
                 
