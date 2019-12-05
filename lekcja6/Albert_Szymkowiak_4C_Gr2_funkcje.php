@@ -1,28 +1,29 @@
 <?php
-    function najs($array,$dl):int {
+    function najs($array,$dl) {
         $max = $array[1];
         for($i = 2 ; $i<=$dl; $i++)
         {
-            if($array[$i] > $max){
+            if($array[$i] > $max && is_numeric($array[$i])){
                 $max = $array[$i];
             }
         }
         return $max;
     }
-    function najm($array,$dl):int{
+    function najm($array,$dl){
         $min = $array[1];
         for($i = 2 ; $i<=$dl; $i++)
         {
-            if($array[$i] < $min){
+            if($array[$i] < $min && is_numeric($array[$i])){
                 $min = $array[$i];
             }
         }
         return $min;
     }
-    function sred($array,$dl):float{
+    function sred($array,$dl){
         $sum =0;
         for($i = 1 ; $i<=$dl; $i++)
         {
+            if(is_numeric($array[$i]))
             $sum+=$array[$i];
         }
         return $sum/$dl;
@@ -44,7 +45,7 @@
         {
     ?>
     <form method="post">
-        <input type="number" min="1" max="70" name="wielkosc" id="">
+        <input type="number" name="wielkosc" id="">
         <button>Wyslij</button>
     </form>
 
@@ -52,6 +53,10 @@
         }
         else if(!isset($_POST['wiek1'])){
         $wielkosc =  $_POST['wielkosc'];
+        if($wielkosc > 70 || $wielkosc< 1){
+            echo '<b>Błąd </b>Maksymalna ilosc: 70. Minimalna: 1';
+            echo '<form method="post"><button type="submit">Powrót</button></form>';
+        }else {
 
         echo '<form method="post">';
        
@@ -68,6 +73,7 @@
         echo "<input type=\"hidden\" name=\"wielkosc\" value=\"$wielkosc\">";
         echo '<button>Wyslij</button> <br>';
         echo '</form>';
+            }
         }else {
             $wielkosc =  $_POST['wielkosc'];
             $array;
@@ -79,6 +85,7 @@
             echo "Najmłodsza to: ". najm($array,$wielkosc);
             echo "Najstarsza to: ". najs($array,$wielkosc);
         }
+        
     ?>
 
 </body>
